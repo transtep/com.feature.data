@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get data</title>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var getChannelData = plugin.get("com.example.data_channel");
+			
+			$("#getQuantity").click(function(){
+				getChannelData.getQuantity();
+				window.hide();
+			});
+
+			$("#getQuantityList").click(function(){
+				getChannelData.getQuantityList();
+				window.hide();
+			});
+
+			getChannelData.on("back", function(){
+				window.show();
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>data.channel</h2>
+	<table border="1">
+		<tr>
+			<th>物件</th>
+			<th>方法</th>
+			<th>描述</th>
+			<th>範例</th>
+		</tr>
+		<tr><!--quantity-->
+			<td>quantity</td>
+			<td>get</td>
+			<td>傳入料道編號取得該料道目前存量</td>
+			<td><button id="getQuantity">Get</button></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>list</td>
+			<td>取得所有料道存量</td>
+			<td><button id="getQuantityList">Get</button></td>
+		</tr>
+		<tr><!--product-->
+			<td>product</td>
+			<td>get</td>
+			<td>取得料道對應商品</td>
+			<td><button id="getProduct">Get</button></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>list</td>
+			<td>取得所有料道對應商品</td>
+			<td><button id="getProductList">Get</button></td>
+		</tr>
+		<tr><!--price-->
+			<td>price</td>
+			<td>get</td>
+			<td>傳入料道編號取得價格</td>
+			<td><button id="getPrice">Get</button></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>list</td>
+			<td>取得料道對應價格</td>
+			<td><button id="getPriceList">Get</button></td>
+		</tr>
+		<tr><!--status-->
+			<td>status</td>
+			<td>get</td>
+			<td>傳入料道編號取得狀態</td>
+			<td><button id="getStatus">Get</button></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>list</td>
+			<td>取得料道狀態</td>
+			<td><button id="getStatusList">Get</button></td>
+		</tr>
+	</table>
+
+	<h2>data.payment</h2>
+	<table border="1">
+		<tr>
+			<th>方法</th>
+			<th>描述</th>
+			<th>範例</th>
+		</tr>
+		<tr>
+			<td>get</td>
+			<td>取得對應的支付資訊</td>
+			<td><button id="getPayment">Get</button></td>
+		</tr>
+		<tr>
+			<td>list</td>
+			<td>取得所有支付資訊</td>
+			<td><button id="getPaymentList">Get</button></td>
+		</tr>
+	</table>
+
+	<h2>data.product</h2>
+	<table border="1">
+		<tr>
+			<th>方法</th>
+			<th>描述</th>
+			<th>範例</th>
+		</tr>
+		<tr>
+			<td>get</td>
+			<td>以商品id取得商品資料</td>
+			<td><button id="getProduct">Get</button></td>
+		</tr>
+		<tr>
+			<td>list</td>
+			<td>取得販賣機所有商品資料</td>
+			<td><button id="getProductList">Get</button></td>
+		</tr>
+	</table>
+
+	<h2>data.property</h2>
+	<table border="1">
+		<tr>
+			<th>方法</th>
+			<th>描述</th>
+			<th>範例</th>
+		</tr>
+		<tr>
+			<td>get</td>
+			<td>取得販賣機參數值</td>
+			<td><button id="getProperty">Get</button></td>
+		</tr>
+		<tr>
+			<td>list</td>
+			<td>取得販賣機所有參數</td>
+			<td><button id="getPropertyList">Get</button></td>
+		</tr>
+	</table>
+</body>
+</html>
