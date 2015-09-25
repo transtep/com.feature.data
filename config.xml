@@ -5,14 +5,11 @@
     <description>a Feature Example IVM Plugin.</description>
     <author email="shiuan@transtep.com" href="http://www.transtep.com">Transtep RD Team</author>
     <serviceurl href="assets://index.html"/>
-    <preference name="position" value="560,150,1000,600"/>
+    <preference name="position" value="360,30,1200,1200"/>
     <preference name="bgcolor" value="#ffffff"/>
     <preference name="fullscreen" value="false"/>
     <preference name="opacity" value="0.9"/>
     <preference name="z-index" value="1000"/>
     <preference name="display" value="true"/>
-    <preference name="depends" value="com.example.data_channel"/>
     <feature name="data" value="feature.transtep.data"/>
-    <feature name="plugin" value="feature.transtep.plugin"/>
-    <feature name="system" value="feature.transtep.system"/>
 </plugin>
