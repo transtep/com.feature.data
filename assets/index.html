@@ -2,142 +2,143 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Get data</title>
+	<title>feature.transtep.data - example</title>
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var getChannelData = plugin.get("com.example.data_channel");
-			
-			$("#getQuantity").click(function(){
-				getChannelData.getQuantity();
-				window.hide();
-			});
-
-			$("#getQuantityList").click(function(){
-				getChannelData.getQuantityList();
-				window.hide();
-			});
-
-			getChannelData.on("back", function(){
-				window.show();
-			});
-		});
-	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<script type="text/javascript" src="main.js"></script>
 </head>
 <body>
-	<h2>data.channel</h2>
-	<table border="1">
-		<tr>
-			<th>物件</th>
-			<th>方法</th>
-			<th>描述</th>
-			<th>範例</th>
-		</tr>
-		<tr><!--quantity-->
-			<td>quantity</td>
-			<td>get</td>
-			<td>傳入料道編號取得該料道目前存量</td>
-			<td><button id="getQuantity">Get</button></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>list</td>
-			<td>取得所有料道存量</td>
-			<td><button id="getQuantityList">Get</button></td>
-		</tr>
-		<tr><!--product-->
-			<td>product</td>
-			<td>get</td>
-			<td>取得料道對應商品</td>
-			<td><button id="getProduct">Get</button></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>list</td>
-			<td>取得所有料道對應商品</td>
-			<td><button id="getProductList">Get</button></td>
-		</tr>
-		<tr><!--price-->
-			<td>price</td>
-			<td>get</td>
-			<td>傳入料道編號取得價格</td>
-			<td><button id="getPrice">Get</button></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>list</td>
-			<td>取得料道對應價格</td>
-			<td><button id="getPriceList">Get</button></td>
-		</tr>
-		<tr><!--status-->
-			<td>status</td>
-			<td>get</td>
-			<td>傳入料道編號取得狀態</td>
-			<td><button id="getStatus">Get</button></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>list</td>
-			<td>取得料道狀態</td>
-			<td><button id="getStatusList">Get</button></td>
-		</tr>
-	</table>
+	<h2>feature.transtep.data 教學範例</h2>
+	<div class="side" style="position: absolute; height:800px;">
+		<h2>data.channel 料道物件</h2>
+		<table border="1" class="table table-bordered table-striped">
+			<tr>
+				<th>名稱</th>
+				<th>方法</th>
+				<th>描述</th>
+				<th>範例</th>
+			</tr>
+			<tr><!--quantity-->
+				<td>quantity</td>
+				<td>get</td>
+				<td>傳入料道編號取得該料道目前存量</td>
+				<td><button id="getChannelQuantity">Check</button></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>list</td>
+				<td>取得所有料道存量</td>
+				<td><button id="getChannelQuantityList">Check</button></td>
+			</tr>
+			<tr><!--product-->
+				<td>product</td>
+				<td>get</td>
+				<td>取得料道對應商品</td>
+				<td><button id="getChannelProduct">Check</button></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>list</td>
+				<td>取得所有料道對應商品</td>
+				<td><button id="getChannelProductList">Check</button></td>
+			</tr>
+			<tr><!--price-->
+				<td>price</td>
+				<td>get</td>
+				<td>傳入料道編號取得價格</td>
+				<td><button id="getChannelPrice">Check</button></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>list</td>
+				<td>取得料道對應價格</td>
+				<td><button id="getChannelPriceList">Check</button></td>
+			</tr>
+			<tr><!--status-->
+				<td>status</td>
+				<td>get</td>
+				<td>傳入料道編號取得狀態</td>
+				<td><button id="getChannelStatus">Check</button></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>list</td>
+				<td>取得料道狀態</td>
+				<td><button id="getChannelStatusList">Check</button></td>
+			</tr>
+		</table>
 
-	<h2>data.payment</h2>
-	<table border="1">
-		<tr>
-			<th>方法</th>
-			<th>描述</th>
-			<th>範例</th>
-		</tr>
-		<tr>
-			<td>get</td>
-			<td>取得對應的支付資訊</td>
-			<td><button id="getPayment">Get</button></td>
-		</tr>
-		<tr>
-			<td>list</td>
-			<td>取得所有支付資訊</td>
-			<td><button id="getPaymentList">Get</button></td>
-		</tr>
-	</table>
+		<h2>data.payment 支付物件</h2>
+		<table border="1" class="table table-bordered table-striped">
+			<tr>
+				<th style="width:70px;">方法</th>
+				<th>描述</th>
+				<th style="width:30px;">範例</th>
+			</tr>
+			<tr>
+				<td>get</td>
+				<td>取得對應的支付資訊</td>
+				<td><button id="getPayment">Check</button></td>
+			</tr>
+			<tr>
+				<td>list</td>
+				<td>取得所有支付資訊</td>
+				<td><button id="getPaymentList">Check</button></td>
+			</tr>
+		</table>
 
-	<h2>data.product</h2>
-	<table border="1">
-		<tr>
-			<th>方法</th>
-			<th>描述</th>
-			<th>範例</th>
-		</tr>
-		<tr>
-			<td>get</td>
-			<td>以商品id取得商品資料</td>
-			<td><button id="getProduct">Get</button></td>
-		</tr>
-		<tr>
-			<td>list</td>
-			<td>取得販賣機所有商品資料</td>
-			<td><button id="getProductList">Get</button></td>
-		</tr>
-	</table>
+		<h2>data.product 商品物件</h2>
+		<table border="1" class="table table-bordered table-striped">
+			<tr>
+				<th style="width:70px;">方法</th>
+				<th>描述</th>
+				<th style="width:30px;">範例</th>
+			</tr>
+			<tr>
+				<td>get</td>
+				<td>以商品id取得商品資料</td>
+				<td><button id="getProduct">Check</button></td>
+			</tr>
+			<tr>
+				<td>list</td>
+				<td>取得販賣機所有商品資料</td>
+				<td><button id="getProductList">Check</button></td>
+			</tr>
+		</table>
 
-	<h2>data.property</h2>
-	<table border="1">
-		<tr>
-			<th>方法</th>
-			<th>描述</th>
-			<th>範例</th>
-		</tr>
-		<tr>
-			<td>get</td>
-			<td>取得販賣機參數值</td>
-			<td><button id="getProperty">Get</button></td>
-		</tr>
-		<tr>
-			<td>list</td>
-			<td>取得販賣機所有參數</td>
-			<td><button id="getPropertyList">Get</button></td>
-		</tr>
-	</table>
+		<h2>data.property 機台設置物件</h2>
+		<table border="1" class="table table-bordered table-striped">
+			<tr>
+				<th style="width:70px;">方法</th>
+				<th>描述</th>
+				<th style="width:30px;">範例</th>
+			</tr>
+			<tr>
+				<td>get</td>
+				<td>取得client販賣機參數值</td>
+				<td><button id="getProperty">Check</button></td>
+			</tr>
+			<tr>
+				<td>list</td>
+				<td>取得client販賣機所有參數</td>
+				<td><button id="getPropertyList">Check</button></td>
+			</tr>
+		</table>
+	</div>
+	<div id="useMethod" style="margin-left:450px; margin-top:20px; position: absolute; z-index:1;">
+		<h3>使用方式: 引入 <b>feature.transtep.data</b> 函式庫</h3>
+		<pre>於 plugin/config.xml 加入 &lt;feature name=&quot;data&quot; value=&quot;feature.transtep.data&quot;/&gt;</pre>
+	</div>
+	<div class="content" style="margin-left:450px; position: absolute; z-index:2; background-color:#FFF;">
+		<h3>程式碼</h3>
+		<div id="show">
+			<text>參數定義：</text>
+			<pre id="parameter"></pre>
+		</div>
+		<text>呼叫方法：</text>
+		<pre id="code" class="prettyprint"></pre>
+		<h3>result 回傳結果</h3>
+		<pre id="result" style="overflow:scroll; min-width:700px; max-width:700px; max-height:830px;"></pre>
+	</div>
 </body>
 </html>
